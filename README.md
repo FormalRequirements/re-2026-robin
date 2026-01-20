@@ -1,4 +1,4 @@
-# Spécifications du jeux d'Horreur Rationnelle
+# Spécifications du jeux d'horreur rationnelle
 
 Les jeux d'horreur reposent souvent sur le surnaturel et des "jump scares" faciles. Les joueurs finissent par s'habituer à ces mécaniques. Ce projet propose une approche différente : l'Horreur Rationnelle.
 
