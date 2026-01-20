@@ -6,11 +6,11 @@ Dans ce jeux, le surnaturel n'existe pas. Tout ce qui effraie le joueur (apparit
 
 Ce projet utilise la méthodologie PEGS (Project, Environment, Goals, System) pour structurer la conception du jeu, depuis la simulation physique des phénomènes jusqu'aux mécaniques de survie.
 
-## Flux de développement (Development Workflow)
+## Flux de développement 
 
 Nous avons structuré le développement de manière à ce que chaque grand pilier du design corresponde à une issue GitHub. Chaque fonctionnalité ou règle est rédigée dans une branche dédiée avant d'être fusionnée dans la branche principale.
 
-## Stratégie de branchement (Branching Strategy)
+## Stratégie de branchement 
 
 * main - branche par défaut contenant les spécifications validées.
 * pegs-chapters - Branches de travail pour chaque section (Projet, Environnement, Buts, Système).
