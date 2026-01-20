@@ -6,6 +6,16 @@ Dans ce jeux, le surnaturel n'existe pas. Tout ce qui effraie le joueur (apparit
 
 Ce projet utilise la méthodologie PEGS (Project, Environment, Goals, System) pour structurer la conception du jeu, depuis la simulation physique des phénomènes jusqu'aux mécaniques de survie.
 
+## Exigeances générales
+
+Approche Rationnelle : Le surnaturel n'est qu'une illusion ; chaque phénomène paranormal s'explique rigoureusement par la science (physique, chimie, acoustique).
+
+Menace Tangible : Le véritable ennemi n'est pas un spectre, mais un antagoniste réelle ou non supernaturel pour piéger le joueur.
+
+Immersion Totale : Aucune interface à l'écran (HUD) ; toutes les informations passent par des outils diégétiques et l'audio spatialisé (binaural).
+
+Enquête & Survie : Le gameplay alterne entre l'analyse technique des anomalies (pour ne pas halluciner) et la fuite face à la menace.
+
 ## Flux de développement 
 
 Nous avons structuré le développement de manière à ce que chaque grand pilier du design corresponde à une issue GitHub. Chaque fonctionnalité ou règle est rédigée dans une branche dédiée avant d'être fusionnée dans la branche principale.
