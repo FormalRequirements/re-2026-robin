@@ -1,6 +1,6 @@
 # Spécifications du FPS d'Horreur Rationnelle
 
-Les jeux d'horreur reposent souvent sur le surnaturel et des *jump scares* faciles. Les joueurs finissent par s'habituer à ces mécaniques. Ce projet propose une approche différente : l'Horreur Rationnelle.
+Les jeux d'horreur reposent souvent sur le surnaturel et des "jump scares" faciles. Les joueurs finissent par s'habituer à ces mécaniques. Ce projet propose une approche différente : l'Horreur Rationnelle.
 
 Dans ce jeux, le surnaturel n'existe pas. Tout ce qui effraie le joueur (apparitions, bruits, objets qui bougent) s'explique par des phénomènes physiques rares (infrasons, fuites de gaz, champs magnétiques). Le but est de créer une dissonance : le joueur croit chasser un fantôme, mais il doit comprendre la science derrière l'hallucination pour survivre à la véritable menace, qui est humaine et bien réelle.
 
