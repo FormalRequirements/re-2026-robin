@@ -4,7 +4,7 @@ This document details the technical and functional requirements of the project, 
 
 ---
 
-## 1. PROJECT
+## 1. PROJECT (P)
 
 ### P.1: Roles and Personnel
 
@@ -54,47 +54,79 @@ This document details the technical and functional requirements of the project, 
 
 ### E.2: Components
 
-**E.2-01 Development Engine**: **Unreal Engine 5.3+**. This is the core component providing the rendering, physics, and input subsystems.
-**E.2-04 Audio API**: **Wwise SDK**. The external component required to interface between the system logic and the user's audio hardware.
-**E.2-05 Target Hardware**: The end-user environment: A PC running Windows 10/11 x64 with a DirectX 12 compatible GPU (Min: GTX 1060).
+**E.2-01**: **Development Engine**. This is the core component providing the rendering, physics, and input subsystems.
+**E.2-04**: **Audio API**. The external component required to interface between the system logic and the user's audio hardware.
+**E.2-05**: **Target Hardware**: The end-user environment: A PC running Windows 10/11 x64 with a DirectX 12 compatible GPU (Min: GTX 1060).
 
 ### E.3: Constraints
 
-**E.3-01 OS Compatibility**: The system must be compiled exclusively for Windows 10/11 (64-bit). Linux and macOS environments are out of scope.
-**E.3-04 Offline Operation**: The system must function in an environment without internet access (Air-gapped), except for the initial installation.
+**E.3-01**: **OS Compatibility**: The system must be compiled exclusively for Windows 10/11 (64-bit). Linux and macOS environments are out of scope.
+**E.3-04**: **Offline Operation**: The system must function in an environment without internet access (Air-gapped), except for the initial installation.
 
 ### E.4: Assumptions
 
-**E.4-01 User Privileges**: We assume the system has Read/Write access to the user's `Documents/MyGames/` directory for storing configuration and save files.
-**E.4-02 Driver Status**: We assume the target environment has up-to-date GPU drivers (Vulkan/DX12 compliant). No legacy driver support is planned.
-**E.4-03 Peripheral Availability**: We assume the environment includes a standard Keyboard and Mouse or an XInput-compatible **Controller**.
+**E.4-01**: **User Privileges**: We assume the system has Read/Write access to the user's `Documents/MyGames/` directory for storing configuration and save files.
+**E.4-02**: **Driver Status**: We assume the target environment has up-to-date GPU drivers (Vulkan/DX12 compliant). No legacy driver support is planned.
+**E.4-03**: **Peripheral Availability**: We assume the environment includes a standard Keyboard and Mouse or an XInput-compatible Controller.
 
 ### E.5: Effects
 
-**E.5-01 Disk Footprint**: The system installation will consume approximately 10 GB of storage space on the host environment's drive.
-* **E.5-04 Peripheral Control**: The system takes exclusive control of the controller's vibration motors (Haptics) and mouse cursor locking during execution.
+**E.5-01**: **Disk Footprint**: The system installation will consume approximately 10 GB of storage space on the host environment's drive.
+**E.5-04**: **Peripheral Control**: The system takes exclusive control of the controller's vibration motors (Haptics) and mouse cursor locking during execution.
 
 ### E.6: Invariants
 
-**E.6-01 Engine Version**: The Unreal Engine version (e.g., 5.3) is locked. The environment will not be upgraded to 5.4+ mid-project to avoid breaking changes.
-**E.6-02 Repository URL**: The remote origin URL of the Git repository is invariant and serves as the single source of truth.
-**E.6-03 Language Standard**: The C++ standard used (e.g., C++17 or C++20) remains constant throughout the codebase lifecycle.
+**E.6-01**: **Engine Version**: The Unreal Engine version (e.g., 5.3) is locked. The environment will not be upgraded to 5.4+ mid-project to avoid breaking changes.
+**E.6-02**: **Repository URL**: The remote origin URL of the Git repository is invariant and serves as the single source of truth.
+**E.6-03**: **Language Standard**: The C++ standard used (e.g., C++17 or C++20) remains constant throughout the codebase lifecycle.
 
-## 3. GOALS (Objectives)
+## 3. GOALS (G)
 
-### 3.1 Project Goals (KPIs & Delivery)
-| ID | Title | Description |
-| :--- | :--- | :--- |
-| **G-PROJ-01** | **Vertical Slice** | Delivery of a functional 15-minute demo (including all core mechanics) at T+3 months. |
-| **G-PROJ-02** | **Performance** | Maintain constant 60 FPS at 1080p. Loading times < 15s on SSD. |
-| **G-PROJ-03** | **Stability** | Zero critical crashes (Class A bugs) during the Beta release. |
+### G.1: Context and Overall Objective
 
-### 3.2 Player Goals (Gameplay Loop)
-| ID | Title | Description |
-| :--- | :--- | :--- |
-| **G-GAME-01** | **Investigation (Debunk)** | The player must identify the rational cause of phenomena (e.g., find the whistling pipe) to reduce stress levels. |
-| **G-GAME-02** | **Survival** | The player must escape the human antagonist without direct confrontation (hiding, diversion). |
-| **G-GAME-03** | **Resource Management** | The player must manage batteries (Tools/Flashlight) to avoid being blind or unable to detect threats. |
+**G.1-01**: **Context**: The current horror game market is saturated with supernatural "ghost hunting" simulators and "walking simulators" that rely on jump scares and mystical tropes. Players are becoming desensitized to scripted supernatural events.
+**G.1-02**: **Core Concept**: The project introduces "Rational Horror": a sub-genre where every perceived paranormal event is generated by a rare but explainable physical phenomenon (Infrasound, Gas leaks, Magnetism).
+**G.1-04**: **Innovation**: To create a gameplay loop based on Cognitive Dissonance, forcing the player to choose between trusting their senses (which are hallucinating) or their tools (which show the truth).
+
+### G.2: Current Situation
+
+**G.2-01**: **Existing Solutions**: Most competitors handle sanity as a simple health bar. When it drops, the game spawns random monsters. There is rarely a mechanic to "cure" the fear through logic.
+**G.2-02**: **Technological Gap**: Few games utilize **Binaural Audio** and **Volumetric Physics** as core gameplay mechanics; they are usually just cosmetic layers.
+**G.2-04**: **Opportunity**: Unreal Engine 5 now allows for real-time simulation of gas fluids and dynamic lighting (Lumen) necessary to create realistic optical illusions (Pareidolia) without pre-rendered scripts.
+
+### G.3: Expected Benefits
+
+**G.3-01**: **Player Immersion**: By removing the HUD and relying on diegetic tools, the player achieves a state of "Flow" and deeper immersion.
+**G.3-03**: **Replayability**: The systemic nature of the physics engine and the AI means that "scares" are not scripted events but dynamic interactions, making each playthrough unique.
+**G.3-04**: **Market Positioning**: The studio establishes itself as a pioneer in "Hard Science Horror," differentiating its IP from the mass of supernatural games.
+
+### G.4: Functionality Overview
+
+**G.4-01**: **Investigation System**: The ability to equip and use handheld tools (Geiger Counter, Thermal Cam, dB Meter) to scan the environment and identify anomaly sources.
+**G.4-02**: **Bio-Feedback Engine**: A background system that tracks toxicity, temperature, and noise exposure to trigger procedural audio-visual hallucinations.
+**G.4-03**: **Antagonist AI**: A non-supernatural enemy agent capable of patrolling, listening for player noise, and sabotaging environmental systems (lights, vents).
+**G.4-04**: **Physics Interaction**: The ability for the player to manipulate objects (pick up, throw, block doors) to alter the environment or create distractions.
+**G.4-05**: **Spatial Audio Navigation**: The rendering of 3D audio cues allowing the player to locate invisible hazards or the enemy purely by ear.
+
+### G.5: High-Level Usage Scenario
+
+**G.5-01**: **Step 1 - The Event**: The player enters a basement and hears a "demonic scream" and sees a shadow moving on the wall. The vision starts to blur.
+**G.5-02**: **Step 2 - Analysis**: The player equips the Spectrum Analyzer. The screen shows a spike at 19Hz (Infrasound) coming from an HVAC pipe, not a ghost.
+**G.5-03**: **Step 3 - Debunking**: The player interacts with the loose pipe to fix it. The vibration stops. The "scream" ceases, and the vision clears (Sanity restores).
+**G.5-04**: **Step 4 - The Real Threat**: With the noise gone, the player now hears faint footsteps behind them. It wasn't a ghost; the human killer was using the noise to hide his approach.
+**G.5-05**: **Step 5 - Survival**: The player throws a wrench to create a distraction and hides in a locker to evade the killer.
+
+### G.6: Limitations and Exclusions
+
+**G.6-01**: **No Multiplayer**: The game is strictly a narrative Single-Player experience. No Co-op or PvP modes are planned for the initial release.
+**G.6-02**: **No Combat Weapons**: The player cannot use guns or knives to kill the antagonist. The gameplay focuses on evasion and gadgetry, not lethal combat.
+**G.6-03**: **No VR Support**: While the concept suits VR, the initial "Vertical Slice" targets Desktop PC only to ensure graphical fidelity.
+
+### G.7: Stakeholders and Requirements Sources
+
+**G.7-01**: **Lead Designer**: Source of the core gameplay mechanics, narrative structure, and the "Rational Horror" manifesto.
+**G.7-02**: **Target Audience**: Hardcore Horror fans and Immersive Sim players (identified via market research and competitive analysis).
+**G.7-03**: **Investors/Publishers**: Stakeholders defining the budget, the timeline (Milestones), and the rating targets (PEGI 18).
 
 ## 4. SYSTEM (Functionality & Rules)
 
