@@ -91,7 +91,7 @@ This document details the technical and functional requirements of the project, 
 ### G.2: Current Situation
 
 **G.2-01**: **Existing Solutions** Most competitors handle sanity as a simple health bar. When it drops, the game spawns random monsters. There is rarely a mechanic to "cure" the fear through logic.
-**G.2-02**: **Technological Gap** Few games utilize **Binaural Audio** and **Volumetric Physics** as core gameplay mechanics; they are usually just cosmetic layers.
+**G.2-02**: **Technological Gap** Few games utilize Binaural Audio and Volumetric Physics as core gameplay mechanics; they are usually just cosmetic layers.
 **G.2-04**: **Opportunity** Unreal Engine 5 now allows for real-time simulation of gas fluids and dynamic lighting (Lumen) necessary to create realistic optical illusions (Pareidolia) without pre-rendered scripts.
 
 ### G.3: Expected Benefits
@@ -128,14 +128,13 @@ This document details the technical and functional requirements of the project, 
 **G.7-02**: **Target Audience** Hardcore Horror fans and Immersive Sim players (identified via market research and competitive analysis).
 **G.7-03**: **Investors/Publishers** Stakeholders defining the budget, the timeline (Milestones), and the rating targets (PEGI 18).
 
-
 ## 4. SYSTEM (S)
 
 ### S.1: Components
 
 **S.1-01**: **Chaos Physics Handler** A subsystem leveraging Unreal's Chaos engine to manage deterministic "poltergeist" events. It applies force vectors to specific rigid bodies (books, chairs) to simulate wind drafts or vibration.
-* **S.1-02 AI Sensory Cortex**: The AI sub-component that processes environmental stimuli. It contains a NoiseListener (detects sound events) and a VisionCone (detects light/movement), feeding data to the Behavior Tree.
-* **S.1-03 Tool Logic Controller** The state machine managing the player's active equipment. It handles battery consumption, data visualization (updating textures on tool screens), and state switching (On/Off/Recharge).
+**S.1-02**: **AI Sensory Cortex**: The AI sub-component that processes environmental stimuli. It contains a NoiseListener (detects sound events) and a VisionCone (detects light/movement), feeding data to the Behavior Tree.
+**S.1-03**: **Tool Logic Controller** The state machine managing the player's active equipment. It handles battery consumption, data visualization (updating textures on tool screens), and state switching (On/Off/Recharge).
 
 ### S.2: Functionality
 
@@ -146,7 +145,7 @@ This document details the technical and functional requirements of the project, 
 ### S.3: Interfaces
 
 **S.3-01**: **Diegetic User Interface (UI)** The system shall not render 2D HUD elements (Health bars, Ammo). All feedback interfaces must be rendered to "Render Targets" (textures) mapped onto the 3D models of the tools (Watch, Geiger Counter screen).
-**S.3-04**: **Input Interface** The system accepts inputs via the **Enhanced Input System**, mapping logical actions (e.g., Action_Inspect) to physical hardware (e.g., Keyboard_E or Gamepad_FaceButton_Left).
+**S.3-04**: **Input Interface** The system accepts inputs via the Enhanced Input System, mapping logical actions (e.g., Action_Inspect) to physical hardware (e.g., Keyboard_E or Gamepad_FaceButton_Left).
 
 ### S.4: Detailed Usage Scenarios
 
