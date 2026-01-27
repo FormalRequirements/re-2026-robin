@@ -4,17 +4,46 @@ This document details the technical and functional requirements of the project, 
 
 ---
 
-## 1. PROJECT (Process & Organization)
+## 1. PROJECT
 
-| ID | Title | Description |
-| :--- | :--- | :--- |
-| **P-01** | **Methodology** | Adoption of the Scrum*method: 2-week Sprints, Daily Stand-up, and Sprint Review. |
-| **P-02** | **Code Quality** | Mandatory Code Reviews. No branch is merged into `main` without validation by a peer. |
-| **P-03** | **Git Flow** | Strict branch usage: `feature/`, `fix/`, `docs/`. Atomic commits with explicit messages. |
-| **P-04** | **Documentation** | The GDD (Game Design Document) must be updated before coding any major new feature. |
-| **P-05** | **Assets & Licenses** | Strict inventory of third-party assets. Only Royalty-Free (CC0) or paid commercial license assets are allowed. |
+### P.1: Roles and Personnel
 
----
+**P.1-01** **Role Definition** : Each project member must have a primary role (e.g., Lead Developer, Product Owner) and a secondary role (e.g., QA Tester) to ensure redundancy. 
+**P.1-02** **Project Manager Authority** One member is designated as Project Manager. They have the final authority on scope decisions and feature cuts to respect deadlines. 
+**P.1-03** **Communication Channels** The team must use a unified communication channel (e.g., Discord or Slack) with dedicated channels for `#dev`, `#art`, and `#general`. 
+
+### P.2: Imposed Technical Choices
+
+**P.2-01** **English Only** All code variables, comments, commit messages, and documentation must be written in English. 
+**P.2-02** **Repository Hosting** The project source code and documentation must be hosted on GitHub (Public or Private repository). 
+**P.2-03** **Documentation Format** Requirements and specifications must be written in Markdown (.md) or AsciiDoc to ensure version control compatibility. 
+
+### P.3: Schedule and Milestones
+
+**P.3-01** **Sprint Duration** The development lifecycle adheres to a fixed 2-week Sprint cadence. Sprints cannot be extended.  
+**P.3-02** **Meeting Rituals** The team must hold a Weekly Sync (max 30 mins) to track progress and update the risk register. 
+**P.3-03** **Project Tracking** The project schedule (GitHub Projects or Jira) must be updated every 48 hours to reflect real-time progress. 
+
+### P.4: Tasks and Deliverables
+
+**P.4-01** **Issue Granularity** Every task must be represented by a GitHub Issue. No task should exceed 3 days of estimated work. 
+**P.4-02** **Traceability** Every Issue must be linked to a specific PEGS Requirement ID (e.g., "Implements [S-05]"). 
+**P.4-03** **Definition of Done (DoD)** | A task is only "Done" when the code is committed, compiled without errors, and tested by a peer. 
+
+### P.5: Required Technology Elements
+
+**P.5-01** **Development Hardware**  All developers must possess a workstation capable of running Unreal Engine 5 at 30fps minimum to ensure local testing. 
+**P.5-02** **Software Licenses** The team must ensure valid licenses for all tools used (IDE, 3D Modeling software) or use free educational versions. 
+
+### P.6: Risk and Mitigation Analysis
+
+**P.6-01** **Bus Factor Mitigation** No critical knowledge should be held by a single person. Documentation or Pair Programming is mandatory for critical systems.
+**P.6-02** **Data Loss Prevention** A backup of the repository (or a fork) must be updated weekly to prevent total data loss. 
+
+### P.7: Requirements Process and Report
+
+**P.7-01** **PEGS Framework** The project must strictly follow the PEGS structure for all specification documents. 
+**P.7-02** **Validation Review**  Requirements must be reviewed and approved by the Project Manager before development begins on that section. 
 
 ## 2. ENVIRONMENT (Tools & Tech)
 
@@ -25,8 +54,6 @@ This document details the technical and functional requirements of the project, 
 | **E-03** | **IDE & Linter** | Visual Studio / Rider. Shared Linter configuration to standardize code style. |
 | **E-04** | **CI/CD** | Automated pipeline (GitHub Actions) to verify compilation on every Push. |
 | **E-05** | **Target Hardware** | The game must be tested on mid-range hardware (equivalent to RTX 3060) to ensure accessibility. |
-
----
 
 ## 3. GOALS (Objectives)
 
@@ -43,8 +70,6 @@ This document details the technical and functional requirements of the project, 
 | **G-GAME-01** | **Investigation (Debunk)** | The player must identify the rational cause of phenomena (e.g., find the whistling pipe) to reduce stress levels. |
 | **G-GAME-02** | **Survival** | The player must escape the human antagonist without direct confrontation (hiding, diversion). |
 | **G-GAME-03** | **Resource Management** | The player must manage batteries (Tools/Flashlight) to avoid being blind or unable to detect threats. |
-
----
 
 ## 4. SYSTEM (Functionality & Rules)
 
