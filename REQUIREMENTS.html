@@ -1,0 +1,232 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project Requirements</title>
+        
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: #24292e;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background-color: #ffffff;
+    }
+    h1, h2, h3 {
+        margin-top: 24px;
+        margin-bottom: 16px;
+        font-weight: 600;
+        line-height: 1.25;
+    }
+    h1 { font-size: 2em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+    h2 { font-size: 1.5em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+    h3 { font-size: 1.25em; }
+    
+    /* Style des tableaux */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 16px;
+        display: block;
+        overflow-x: auto;
+    }
+    th, td {
+        padding: 6px 13px;
+        border: 1px solid #dfe2e5;
+    }
+    tr {
+        background-color: #fff;
+        border-top: 1px solid #c6cbd1;
+    }
+    tr:nth-child(2n) {
+        background-color: #f6f8fa;
+    }
+    th {
+        font-weight: 600;
+        background-color: #f6f8fa;
+    }
+
+    /* Style du code */
+    code {
+        padding: 0.2em 0.4em;
+        margin: 0;
+        font-size: 85%;
+        background-color: #f6f8fa;
+        border-radius: 3px;
+        font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+    }
+    pre {
+        padding: 16px;
+        overflow: auto;
+        font-size: 85%;
+        line-height: 1.45;
+        background-color: #f6f8fa;
+        border-radius: 3px;
+    }
+    pre code {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    /* Listes et citations */
+    blockquote {
+        padding: 0 1em;
+        color: #6a737d;
+        border-left: 0.25em solid #dfe2e5;
+        margin: 0;
+    }
+    hr {
+        height: 0.25em;
+        padding: 0;
+        margin: 24px 0;
+        background-color: #e1e4e8;
+        border: 0;
+    }
+</style>
+
+    </head>
+    <body>
+        <h1>REQUIREMENTS.md</h1>
+<p>This document details the technical and functional requirements of the project, structured according to the PEGS methodology (Project, Environment, Goals, Systems).</p>
+<hr />
+<h2>1. PROJECT (P)</h2>
+<h3>P.1: Roles and Personnel</h3>
+<p><strong>P.1-01</strong>: <strong>Role Definition</strong> : Each project member must have a primary role (e.g., Lead Developer, Product Owner) and a secondary role (e.g., QA Tester) to ensure redundancy.</p>
+<p><strong>P.1-02</strong>: <strong>Project Manager Authority</strong> One member is designated as Project Manager. They have the final authority on scope decisions and feature cuts to respect deadlines. </p>
+<p><strong>P.1-03</strong>: <strong>Communication Channels</strong> The team must use a unified communication channel (e.g., Discord or Slack) with dedicated channels for <code>#dev</code>, <code>#art</code>, and <code>#general</code>. </p>
+<h3>P.2: Imposed Technical Choices</h3>
+<p><strong>P.2-01</strong>: <strong>English Only</strong> All code variables, comments, commit messages, and documentation must be written in English. </p>
+<p><strong>P.2-02</strong>: <strong>Repository Hosting</strong> The project source code and documentation must be hosted on GitHub (Public or Private repository). </p>
+<p><strong>P.2-03</strong>: <strong>Documentation Format</strong> Requirements and specifications must be written in Markdown (.md) or AsciiDoc to ensure version control compatibility. </p>
+<h3>P.3: Schedule and Milestones</h3>
+<p><strong>P.3-01</strong>: <strong>Sprint Duration</strong> The development lifecycle adheres to a fixed 2-week Sprint cadence. Sprints cannot be extended.</p>
+<p><strong>P.3-02</strong>: <strong>Meeting Rituals</strong> The team must hold a Weekly Sync (max 30 mins) to track progress and update the risk register.</p>
+<p><strong>P.3-03</strong>: <strong>Project Tracking</strong> The project schedule (GitHub Projects or Jira) must be updated every 48 hours to reflect real-time progress. </p>
+<h3>P.4: Tasks and Deliverables</h3>
+<p><strong>P.4-01</strong>: <strong>Issue Granularity</strong> Every task must be represented by a GitHub Issue. No task should exceed 3 days of estimated work. </p>
+<p><strong>P.4-02</strong>: <strong>Traceability</strong> Every Issue must be linked to a specific PEGS Requirement ID (e.g., "Implements [S-05]"). </p>
+<p><strong>P.4-03</strong>: <strong>Definition of Done (DoD)</strong> | A task is only "Done" when the code is committed, compiled without errors, and tested by a peer. </p>
+<h3>P.5: Required Technology Elements</h3>
+<p><strong>P.5-01</strong>: <strong>Development Hardware</strong> All developers must possess a workstation capable of running Unreal Engine 5 at 30fps minimum to ensure local testing. </p>
+<p><strong>P.5-02</strong>: <strong>Software Licenses</strong> The team must ensure valid licenses for all tools used (IDE, 3D Modeling software) or use free educational versions. </p>
+<h3>P.6: Risk and Mitigation Analysis</h3>
+<p><strong>P.6-01</strong>: <strong>Bus Factor Mitigation</strong> No critical knowledge should be held by a single person. Documentation or Pair Programming is mandatory for critical systems.</p>
+<p><strong>P.6-02</strong>: <strong>Data Loss Prevention</strong> A backup of the repository (or a fork) must be updated weekly to prevent total data loss. </p>
+<h3>P.7: Requirements Process and Report</h3>
+<p><strong>P.7-01</strong>: <strong>PEGS Framework</strong> The project must strictly follow the PEGS structure for all specification documents.</p>
+<p><strong>P.7-02</strong>: <strong>Validation Review</strong>  Requirements must be reviewed and approved by the Project Manager before development begins on that section. </p>
+<h2>2. ENVIRONMENT (E)</h2>
+<h3>E.1: Glossary</h3>
+<p><strong>E.1-01 LTS</strong>: <strong>Long Term Support</strong> Refers to the version of the Game Engine (Unreal/Unity) that is guaranteed to be stable for the duration of the project.</p>
+<p><strong>E.1-02</strong>: <strong>Vertical Slice</strong> A portion of the software that demonstrates all layers of the architecture (UI, Logic, Data, Audio) functioning together in a final quality state.</p>
+<h3>E.2: Components</h3>
+<p><strong>E.2-01</strong>: <strong>Development Engine</strong> This is the core component providing the rendering, physics, and input subsystems.</p>
+<p><strong>E.2-04</strong>: <strong>Audio API</strong> The external component required to interface between the system logic and the user's audio hardware.</p>
+<p><strong>E.2-05</strong>: <strong>Target Hardware</strong> The end-user environment: A PC running Windows 10/11 x64 with a DirectX 12 compatible GPU (Min: GTX 1060).</p>
+<h3>E.3: Constraints</h3>
+<p><strong>E.3-01</strong>: <strong>OS Compatibility</strong> The system must be compiled exclusively for Windows 10/11 (64-bit). Linux and macOS environments are out of scope.</p>
+<p><strong>E.3-04</strong>: <strong>Offline Operation</strong> The system must function in an environment without internet access (Air-gapped), except for the initial installation.</p>
+<h3>E.4: Assumptions</h3>
+<p><strong>E.4-01</strong>: <strong>User Privileges</strong> We assume the system has Read/Write access to the user's <code>Documents/MyGames/</code> directory for storing configuration and save files.</p>
+<p><strong>E.4-02</strong>: <strong>Driver Status</strong> We assume the target environment has up-to-date GPU drivers (Vulkan/DX12 compliant). No legacy driver support is planned.</p>
+<p><strong>E.4-03</strong>: <strong>Peripheral Availability</strong> We assume the environment includes a standard Keyboard and Mouse or an XInput-compatible Controller.</p>
+<h3>E.5: Effects</h3>
+<p><strong>E.5-01</strong>: <strong>Disk Footprint</strong>:The system installation will consume approximately 10 GB of storage space on the host environment's drive.</p>
+<p><strong>E.5-04</strong>: <strong>Peripheral Control</strong> The system takes exclusive control of the controller's vibration motors (Haptics) and mouse cursor locking during execution.</p>
+<h3>E.6: Invariants</h3>
+<p><strong>E.6-01</strong>: <strong>Engine Version</strong> The Unreal Engine version (e.g., 5.3) is locked. The environment will not be upgraded to 5.4+ mid-project to avoid breaking changes.</p>
+<p><strong>E.6-02</strong>: <strong>Repository URL</strong> The remote origin URL of the Git repository is invariant and serves as the single source of truth.</p>
+<p><strong>E.6-03</strong>: <strong>Language Standard</strong> The C++ standard used (e.g., C++17 or C++20) or the blueprint remains constant throughout the codebase lifecycle.</p>
+<h2>3. GOALS (G)</h2>
+<h3>G.1: Context and Overall Objective</h3>
+<p><strong>G.1-01</strong>: <strong>Context</strong> The current horror game market is saturated with supernatural "ghost hunting" simulators and "walking simulators" that rely on jump scares and mystical tropes. Players are becoming desensitized to scripted supernatural events.</p>
+<p><strong>G.1-02</strong>: <strong>Core Concept</strong> The project introduces "Rational Horror": a sub-genre where every perceived paranormal event is generated by a rare but explainable physical phenomenon (Infrasound, Gas leaks, Magnetism).</p>
+<p><strong>G.1-04</strong>: <strong>Innovation</strong> To create a gameplay loop based on Cognitive Dissonance, forcing the player to choose between trusting their senses (which are hallucinating) or their tools (which show the truth).</p>
+<h3>G.2: Current Situation</h3>
+<p><strong>G.2-01</strong>: <strong>Existing Solutions</strong> Most competitors handle sanity as a simple health bar. When it drops, the game spawns random monsters. There is rarely a mechanic to "cure" the fear through logic.</p>
+<p><strong>G.2-02</strong>: <strong>Technological Gap</strong> Few games utilize Binaural Audio and Volumetric Physics as core gameplay mechanics; they are usually just cosmetic layers.</p>
+<p><strong>G.2-04</strong>: <strong>Opportunity</strong> Unreal Engine 5 now allows for real-time simulation of gas fluids and dynamic lighting (Lumen) necessary to create realistic optical illusions (Pareidolia) without pre-rendered scripts.</p>
+<h3>G.3: Expected Benefits</h3>
+<p><strong>G.3-01</strong>: <strong>Player Immersion</strong> By removing the HUD and relying on diegetic tools, the player achieves a state of "Flow" and deeper immersion.</p>
+<p><strong>G.3-03</strong>: <strong>Replayability</strong> The systemic nature of the physics engine and the AI means that "scares" are not scripted events but dynamic interactions, making each playthrough unique.</p>
+<p><strong>G.3-04</strong>: <strong>Market Positioning</strong> The studio establishes itself as a pioneer in "Hard Science Horror," differentiating its IP from the mass of supernatural games.</p>
+<h3>G.4: Functionality Overview</h3>
+<p><strong>G.4-01</strong>: <strong>Investigation System</strong> The ability to equip and use handheld tools (Geiger Counter, Thermal Cam, dB Meter) to scan the environment and identify anomaly sources.</p>
+<p><strong>G.4-02</strong>: <strong>Bio-Feedback Engine</strong> A background system that tracks toxicity, temperature, and noise exposure to trigger procedural audio-visual hallucinations.</p>
+<p><strong>G.4-03</strong>: <strong>Antagonist AI</strong> A non-supernatural enemy agent capable of patrolling, listening for player noise, and sabotaging environmental systems (lights, vents).</p>
+<p><strong>G.4-04</strong>: <strong>Physics Interaction</strong> The ability for the player to manipulate objects (pick up, throw, block doors) to alter the environment or create distractions.</p>
+<p><strong>G.4-05</strong>: <strong>Spatial Audio Navigation</strong> The rendering of 3D audio cues allowing the player to locate invisible hazards or the enemy purely by ear.</p>
+<h3>G.5: High-Level Usage Scenario</h3>
+<p><strong>G.5-01</strong>: <strong>Step 1 - The Event</strong> The player enters a basement and hears a "demonic scream" and sees a shadow moving on the wall. The vision starts to blur.</p>
+<p><strong>G.5-02</strong>: <strong>Step 2 - Analysis</strong> The player equips the Spectrum Analyzer. The screen shows a spike at 19Hz (Infrasound) coming from an HVAC pipe, not a ghost.</p>
+<p><strong>G.5-03</strong>: <strong>Step 3 - Debunking</strong> The player interacts with the loose pipe to fix it. The vibration stops. The "scream" ceases, and the vision clears (Sanity restores).</p>
+<p><strong>G.5-04</strong>: <strong>Step 4 - The Real Threat</strong> With the noise gone, the player now hears faint footsteps behind them. It wasn't a ghost; the human killer was using the noise to hide his approach.
+<strong>G.5-05</strong>: <strong>Step 5 - Survival</strong> The player throws a wrench to create a distraction and hides in a locker to evade the killer.</p>
+<h3>G.6: Limitations and Exclusions</h3>
+<p><strong>G.6-01</strong>: <strong>No Multiplayer</strong> The game is strictly a narrative Single-Player experience. No Co-op or PvP modes are planned for the initial release.</p>
+<p><strong>G.6-02</strong>: <strong>No Combat Weapons</strong> The player cannot use guns or knives to kill the antagonist. The gameplay focuses on evasion and gadgetry, not lethal combat.</p>
+<p><strong>G.6-03</strong>: <strong>No VR Support</strong> While the concept suits VR, the initial "Vertical Slice" targets Desktop PC only to ensure graphical fidelity.</p>
+<h3>G.7: Stakeholders and Requirements Sources</h3>
+<p><strong>G.7-01</strong>: <strong>Lead Designer</strong> Source of the core gameplay mechanics, narrative structure, and the "Rational Horror" manifesto.</p>
+<p><strong>G.7-02</strong>: <strong>Target Audience</strong> Hardcore Horror fans and Immersive Sim players (identified via market research and competitive analysis).</p>
+<p><strong>G.7-03</strong>: <strong>Investors/Publishers</strong> Stakeholders defining the budget, the timeline (Milestones), and the rating targets (PEGI 18).</p>
+<h2>4. SYSTEM (S)</h2>
+<h3>S.1: Components</h3>
+<p><strong>S.1-01</strong>: <strong>Chaos Physics Handler</strong> A subsystem leveraging Unreal's Chaos engine to manage deterministic "poltergeist" events. It applies force vectors to specific rigid bodies (books, chairs) to simulate wind drafts or vibration.</p>
+<p><strong>S.1-02</strong>: <strong>AI Sensory Cortex</strong>: The AI sub-component that processes environmental stimuli. It contains a NoiseListener (detects sound events) and a VisionCone (detects light/movement), feeding data to the Behavior Tree.</p>
+<p><strong>S.1-03</strong>: <strong>Tool Logic Controller</strong> The state machine managing the player's active equipment. It handles battery consumption, data visualization (updating textures on tool screens), and state switching (On/Off/Recharge).</p>
+<h3>S.2: Functionality</h3>
+<p><strong>S.2-03</strong>: <strong>Propagate Sound</strong> The system must calculate audio occlusion in real-time. If a wall exists between the Source and Listener, apply a Low-Pass Filter and volume attenuation curve defined in the Unreal project.</p>
+<p><strong>S.2-04</strong>: <strong>Debunking Logic</strong> The system must validate interactions. If the player uses the "Wrench" tool on a "Loose Pipe" actor, the system must: Stop the Hissing Sound, Disable the Gas Volume, and Reset the player's Stress recovery rate.</p>
+<p><strong>S.2-05</strong>: <strong>AI Pathfinding</strong> The system must update the Antagonist's path dynamically. If the player blocks a door with a physics object, the AI must recalculate a path via the NavMesh or trigger a "Breach" animation to destroy the obstacle.</p>
+<h3>S.3: Interfaces</h3>
+<p><strong>S.3-01</strong>: <strong>Diegetic User Interface (UI)</strong> The system shall not render 2D HUD elements (Health bars, Ammo). All feedback interfaces must be rendered to "Render Targets" (textures) mapped onto the 3D models of the tools (Watch, Geiger Counter screen).</p>
+<p><strong>S.3-04</strong>: <strong>Input Interface</strong> The system accepts inputs via the Enhanced Input System, mapping logical actions (e.g., Action_Inspect) to physical hardware (e.g., Keyboard_E or Gamepad_FaceButton_Left).</p>
+<h3>S.4: Detailed Usage Scenarios</h3>
+<p><strong>S.4-02</strong>: <strong>Scenario: Audio Evasion</strong>
+1. <strong>System Input</strong> Player sprints across a wooden floor surface.</p>
+<ol>
+<li>
+<p><strong>System Process</strong> AnimNotify on footstep generates a NoiseEvent with Tag Wood and Radius 1500 units.</p>
+</li>
+<li>
+<p><strong>AI Response</strong> AI Agent within radius receives the event. Switches state from Patrol to Investigate.</p>
+</li>
+<li>
+<p><strong>AI Action</strong> AI calculates path to the noise location.</p>
+</li>
+<li>
+<p><strong>Player Response</strong> Player hears AI footsteps approaching via HRTF audio and throws a GlassBottle object into the next room.</p>
+</li>
+<li>
+<p><strong>System Resolution</strong> Bottle breaks. New NoiseEvent generated. AI updates target to the new noise source, allowing player to slip away.</p>
+</li>
+</ol>
+<h3>S.5: Prioritization</h3>
+<p><strong>S.5-01</strong>: <strong>Must Have (Critical)</strong>
+Player Movement &amp; Interaction.
+Antagonist AI (Pathfinding &amp; Sensing).
+Sanity/Toxicity calculation system.
+Basic Diegetic Tools (Flashlight, Meter).</p>
+<p><strong>S.5-02</strong>: <strong>Should Have (Important)</strong>
+Advanced Volumetric Fog reacting to light.
+Complex physics interactions (blocking doors).
+Full Controller Haptics support.</p>
+<p><strong>S.5-03</strong>: <strong>Could Have (Desirable)</strong>
+Voice Recognition (AI hears player microphone).
+Dynamic destruction of environment walls.</p>
+<p><strong>S.5-04</strong>: <strong>Won't Have (Out of Scope)</strong>
+Multiplayer Networking.
+Combat weapons (Guns/Melee damage).
+VR Support (deferred to post-launch).</p>
+<h3>S.6: Verification and Acceptance</h3>
+<p><strong>S.6-02</strong>: <strong>Performance Profiling</strong> The system is verified using "Unreal Insights" to ensure the AI logic thread does not exceed 2ms per frame and Total Frame Time remains under 16.6ms (60 FPS).</p>
+<p><strong>S.6-03</strong>: <strong>Playtest Acceptance</strong> A "Vertical Slice" build is played by a focus group (N=10). Acceptance criterion: 80% of players must successfully identify a specific "Ghost" as a physical anomaly without external hints.</p>
+<p><strong>S.6-04</strong>: <strong>Audio Verification</strong> Validation that audio occlusion is functioning by measuring dB levels of a sound source while moving the listener behind geometry (Must show &gt;10dB drop).</p>
+    </body>
+    </html>
+    
