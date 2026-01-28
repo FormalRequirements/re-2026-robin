@@ -22,6 +22,8 @@ This document details the technical and functional requirements of the project, 
 
 **P.2-03**: **Documentation Format** Requirements and specifications must be written in Markdown (.md) or AsciiDoc to ensure version control compatibility. 
 
+**P.2-04**: **Name the files** The files shall have a way to name them
+
 ### P.3: Schedule and Milestones
 
 **P.3-01**: **Sprint Duration** The development lifecycle adheres to a fixed 2-week Sprint cadence. Sprints cannot be extended.
@@ -32,11 +34,13 @@ This document details the technical and functional requirements of the project, 
 
 ### P.4: Tasks and Deliverables
 
-**P.4-01**: **Issue Granularity** Every task must be represented by a GitHub Issue. No task should exceed 3 days of estimated work. 
+**P.4-01**: **Issue Granularity** Every task must be represented by a GitHub Issue. No task shall exceed 3 days of estimated work. 
 
 **P.4-02**: **Traceability** Every Issue must be linked to a specific PEGS Requirement ID (e.g., "Implements [S-05]"). 
 
-**P.4-03**: **Definition of Done (DoD)** | A task is only "Done" when the code is committed, compiled without errors, and tested by a peer. 
+**P.4-03**: **Definition of Done (DoD)** A task is only "Done" when the code is committed, compiled without errors, and tested by a peer. 
+
+**P.4-05**: **Gaming platforms** The game shall be on differents gaming platform like Steam, Epic Games ou GOG
 
 ### P.5: Required Technology Elements
 
@@ -46,7 +50,7 @@ This document details the technical and functional requirements of the project, 
 
 ### P.6: Risk and Mitigation Analysis
 
-**P.6-01**: **Bus Factor Mitigation** No critical knowledge should be held by a single person. Documentation or Pair Programming is mandatory for critical systems.
+**P.6-01**: **Bus Factor Mitigation** No critical knowledge shall be held by a single person. Documentation or Pair Programming is mandatory for critical systems.
 
 **P.6-02**: **Data Loss Prevention** A backup of the repository (or a fork) must be updated weekly to prevent total data loss. 
 
@@ -212,7 +216,7 @@ Antagonist AI (Pathfinding & Sensing).
 Sanity/Toxicity calculation system.
 Basic Diegetic Tools (Flashlight, Meter).
 
-**S.5-02**: **Should Have (Important)**
+**S.5-02**: **sahll Have (Important)**
 Advanced Volumetric Fog reacting to light.
 Complex physics interactions (blocking doors).
 Full Controller Haptics support.

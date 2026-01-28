@@ -130,3 +130,72 @@ def test_pegs_numbers_increasing(markdown_content):
     errors = validate_pegs_structure(markdown_content)
     number_errors = [e for e in errors if "numéros de sections PEGS" in e]
     assert not number_errors, f"Numéros de sections PEGS non croissants: {number_errors}"
+
+def test_terminology_no_should(markdown_content):
+    """Vérifie que le mot 'should' (devrait) n'est pas utilisé. """
+    errors = []
+    for i, line in enumerate(markdown_content.splitlines()):
+        if re.search(r'\bshould\b', line, re.IGNORECASE):
+            errors.append(f"Ligne {i+1}: {line.strip()}")
+    assert not errors, (
+        f"Le mot-clé 'should' (ambigu) a été détecté. " f"Détails: {errors}")
+
+def test_id_format_compliance(markdown_content):
+    """Vérifie que tous les IDs respectent strictement le format X.Y-ZZ."""
+    pattern = re.compile(r'\*\*([PEGS]\.\d+-\d+)\*\*')
+    found_ids = pattern.findall(markdown_content)
+    assert found_ids, "Aucun ID valide trouvé (le format attendu est **X.Y-ZZ**)."
+    
+    bad_pattern = re.compile(r'\*\*([PEGS][\.\-]\d+[\.\-]\d+)\*\*')
+    potential_bad_ids = bad_pattern.findall(markdown_content)
+    
+    real_errors = [pid for pid in potential_bad_ids if pid not in found_ids]
+    
+    assert not real_errors, f"IDs mal formatés détectés : {real_errors}. Format attendu : P.X-YY"
+
+def test_cross_references_integrity(markdown_content):
+    """Vérifie que si une exigence fait référence à une autre (ex: "Voir [S.1-02]")"""
+
+    defined_ids = set(re.findall(r'\*\*([PEGS]\.\d+-\d+)\*\*', markdown_content))
+    cited_ids = set(re.findall(r'[\[\(]([PEGS]\.\d+-\d+)[\]\)]', markdown_content))
+    
+    broken_links = [cite for cite in cited_ids if cite not in defined_ids]
+    
+    assert not broken_links, (
+        f"Liens morts détectés ! Vous faites référence à des IDs qui n'existent pas :\n" f"{broken_links}"
+    )
+
+def test_no_placeholders(markdown_content):
+    """Vérifie qu'il ne reste pas de mentions temporaires comme 'TODO', 'TBD', 'FIXME' ou '???'."""
+    forbidden_terms = ['TODO', 'TBD', 'FIXME', '???', 'TO DO', 'TO DEFINED']
+    errors = []
+    
+    for i, line in enumerate(markdown_content.splitlines()):
+        upper_line = line.upper()
+        for term in forbidden_terms:
+            if term in upper_line:
+                errors.append(f"Ligne {i+1}: Terme interdit '{term}' trouvé -> {line.strip()[:40]}...")
+
+    assert not errors, f"Le document contient encore des zones en chantier :\n" + "\n".join(errors)
+
+def test_unique_titles(markdown_content):
+    """Vérifie qu'aucun titre d'exigence n'est utilisé deux fois."""
+    lines = markdown_content.splitlines()
+    titles_seen = {} #
+    duplicates = []
+    
+    for line in lines:
+        if "**" in line and "|" in line:
+            parts = line.split("|")
+            if len(parts) >= 3:
+                current_id = parts[1].replace('*', '').strip()
+                current_title = parts[2].replace('*', '').strip()
+                
+                if re.match(r'[PEGS]\.\d+-\d+', current_id):
+                    if current_title in titles_seen:
+                        prev_id = titles_seen[current_title]
+                        duplicates.append(f"Titre '{current_title}' dupliqué (utilisé par {prev_id} et {current_id})")
+                    else:
+                        titles_seen[current_title] = current_id
+
+    assert not duplicates, "\n".join(duplicates)
