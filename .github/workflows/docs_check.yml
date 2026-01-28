@@ -33,7 +33,7 @@ jobs:
         path: docs/REQUIREMENTS.html
 
   test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
@@ -50,6 +50,6 @@ jobs:
         pip install pytest
 
     - name: Run pytest
-      shell: powershell
+      shell: bash/sh
       run: |
-        pytest
+        python -m pytest test_requirements.py
